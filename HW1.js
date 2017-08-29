@@ -18,8 +18,30 @@ let objClass = {
 //     }
 // }
 // addClass(object, 'new');
+let objStr;
+let addClass = (obj, classValue) => {
+    objStr = objClass.className.split(' ');
+    for (let i = 0; i < objStr.length; i++) {
+        if (objStr[i] === classValue) {
+            return;
+        }
+    }
+    objStr.push(classValue);
+    obj.className = objStr.join(' ');
+};
 
-let objStr = objClass.className.split(' ');
+
+
+addClass(objClass, 'new');
 console.log(objStr);
-console.log(objStr[0]);
-console.log(objStr.length);
+
+addClass(objClass, 'menu');
+console.log(objStr);
+
+addClass(objClass, 'new');
+console.log(objStr);
+addClass(objClass, 'me');
+console.log(objStr);
+addClass(objClass, 'open');
+console.log(objStr);
+
